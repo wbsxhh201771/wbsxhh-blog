@@ -13,7 +13,7 @@ date: 2026-08-10
 
 排障 Agent 的目标是把 **Observe 阶段**——收集上下文、关联信号、生成初步假设——自动化，让每个 oncall 工程师都能快速获得资深工程师级别的初步分析。
 
-**明确不做的事**：当前阶段不做自动修复。行业成功落地的案例都遵循「AI 调查 + 建议，人审批执行」的模式。
+行业成功落地的案例都遵循「AI 调查 + 建议，人审批执行」的模式。
 
 {/* truncate */}
 
@@ -23,7 +23,7 @@ date: 2026-08-10
 
 ### 模式 A：单 Agent + 假设驱动
 
-代表：Datadog Bits AI。
+代表：[Datadog Bits AI](/docs/research/datadog-bits-ai)。
 
 告警触发后，单个 Agent 生成多个根因假设，逐个定向验证，验证通过的假设继续深挖子假设，形成递归调查链。早期版本一次性查看所有遥测数据，12+ tool calls 产生矛盾信号，效果很差；改为假设驱动后准确率显著提升。
 
@@ -35,7 +35,7 @@ date: 2026-08-10
 
 ### 模式 C：Orchestrator + 领域专家 Agent（推荐）
 
-代表：Komodor、Dash0、字节跳动 SRE-Copilot、Azure Copilot。
+代表：[Komodor](/docs/research/komodor)、[Dash0](/docs/research/dash0)、[字节跳动 SRE-Copilot](/docs/research/bytedance-sre-agent)、Azure Copilot。
 
 一个编排器做意图理解和任务分派，按需调度领域专家 Agent。与模式 B 的区别：B 是同时并行调查，C 是按需调度。
 
@@ -78,11 +78,11 @@ SA、SRE、DBA、Network 各团队在排障中关注的数据源、排查逻辑�
 
 ### 1. 工具设计比 Prompt 工程重要
 
-Komodor 的经验数据：**20% prompt engineering + 80% custom tools, evals, monitoring**。每个团队的核心工作量在 MCP tool server 的设计上——工具描述的准确性、输出格式的 LLM 友好性、错误消息的引导性。
+Komodor 的经验数据：**20% prompt engineering + 80% custom tools, evals, monitoring**（详见 [Komodor 调研](/docs/research/komodor)）。每个团队的核心工作量在 MCP tool server 的设计上——工具描述的准确性、输出格式的 LLM 友好性、错误消息的引导性。
 
 ### 2. 查询接口优于原始数据拉取
 
-让 Agent 写 SQL / PromQL 在数据源侧完成过滤和聚合，而非把原始数据拉到 context window 里处理。Datadog 实测准确率提升，成本降低约 40%。
+让 Agent 写 SQL / PromQL 在数据源侧完成过滤和聚合，而非把原始数据拉到 context window 里处理。Datadog 实测准确率提升，成本降低约 40%（详见 [Datadog Bits AI 调研](/docs/research/datadog-bits-ai)）。
 
 ### 3. Token 效率是硬约束
 
@@ -96,7 +96,7 @@ Agent 收到告警后，应该先生成假设（「可能是最近发布导致�
 
 ### 5. 领域知识的结构化注入
 
-每个团队现有的 runbook 和排障经验是最大的差异化资产。商业产品的通用能力正在趋同，差异化来自领域知识的注入。
+每个团队现有的 runbook 和排障经验是最大的差异化资产。可参考 [Cleric AI 三层记忆系统](/docs/research/cleric-ai) 的设计思路。
 
 ### 6. 评测体系必须同步建设
 
@@ -219,7 +219,7 @@ InvestigationOutcome（summary + planner_verdict + dispatch_results）
 
 团队需要了解 LLM 在排障场景下的系统性弱点：
 
-1. **因果推断不可靠**：LLM 擅长发现相关性，但在因果方向判断上系统性不可靠。假设驱动 + 工具定向验证是最务实的起步方案。
+1. **因果推断不可靠**：LLM 擅长发现相关性，但在因果方向判断上系统性不可靠（[Anthropic AIRE 一手经验](/docs/research/anthropic-sre-agent)）。假设驱动 + 工具定向验证是最务实的起步方案。
 2. **Postmortem 的 80% 问题**：生成的事后报告 80% 可读、有说服力，但根因分析很差。组织层面的根因分析仍然需要人来补充。
 3. **Agent 不理解组织上下文**：不知道系统历史演进、配置为什么长这样、上次类似事故的处理策略。需要通过 runbook、skill、记忆系统结构化注入。
 
@@ -257,4 +257,15 @@ SRE Agent 的构建不是「一个大 LLM + 全量数据」，而是：
 
 ---
 
-**延伸阅读**：[关于本站与文档说明](/docs/intro) · [GitHub](https://github.com/wbsxhh201771?tab=repositories)
+## 引用文档
+
+详细行业调研材料见 [调研材料索引](/docs/research)：
+
+| 文档 | 主题 |
+|------|------|
+| [Datadog Bits AI](/docs/research/datadog-bits-ai) | 假设驱动调查、MCP 工具设计 |
+| [Komodor](/docs/research/komodor) | Multi-Agent 平台、SME Agent |
+| [Dash0](/docs/research/dash0) | Agent0 编排、可观测性 Agent |
+| [Cleric AI](/docs/research/cleric-ai) | 三层记忆、Knowledge Graph |
+| [Anthropic SRE Agent](/docs/research/anthropic-sre-agent) | OODA 能力边界、AIRE 实践 |
+| [字节跳动 SRE Agent](/docs/research/bytedance-sre-agent) | SRE-Copilot、按模态拆分 Agent |

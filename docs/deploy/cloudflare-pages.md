@@ -11,7 +11,7 @@ sidebar_position: 1
 ## 前置条件
 
 - Cloudflare 账号
-- 代码托管在 GitHub（推荐：[wbsxhh201771/wbsxhh-blog](https://github.com/wbsxhh201771)）
+- 代码托管在 GitHub
 - Node.js >= 20
 
 ## 方式一：Git 集成（推荐）
@@ -21,8 +21,8 @@ sidebar_position: 1
 ```bash
 git init
 git add .
-git commit -m "init: wbsxhh blog"
-git remote add origin git@github.com:wbsxhh201771/wbsxhh-blog.git
+git commit -m "init: your blog"
+git remote add origin git@github.com:your/your-blog.git
 git push -u origin main
 ```
 

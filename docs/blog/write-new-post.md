@@ -129,16 +129,6 @@ git push
 
 部署配置详见 [Cloudflare Pages 部署](/docs/deploy/cloudflare-pages)。
 
-## 常用检查清单
-
-- [ ] Front Matter 中 `title`、`authors`、`date` 已填写
-- [ ] 作者 key 在 `authors.yml` 中存在
-- [ ] 文件名日期与 `date` 字段一致（建议）
-- [ ] 列表摘要处已加 `{/* truncate */}`（长文建议）
-- [ ] 本地 `npm start` 预览正常
-- [ ] `npm run build` 无报错
-- [ ] 敏感信息、公司内部名称已脱敏
-
 ## 目录关系速查
 
 | 想做的事 | 改哪里 |
