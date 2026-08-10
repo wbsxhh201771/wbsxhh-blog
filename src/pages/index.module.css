@@ -22,12 +22,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(20, 16, 8, 0.55) 0%,
-    rgba(180, 130, 0, 0.4) 55%,
-    rgba(245, 197, 24, 0.35) 100%
-  );
+  background: rgba(0, 0, 0, 0.45);
   z-index: 0;
 }
 
