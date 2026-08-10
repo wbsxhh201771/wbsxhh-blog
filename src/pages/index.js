@@ -18,12 +18,12 @@ function HomepageHeader() {
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
+            className={clsx('button button--lg', styles.heroButtonPrimary)}
             to="/blog">
             阅读博客 →
           </Link>
           <Link
-            className="button button--outline button--secondary button--lg margin-left--md"
+            className={clsx('button button--lg', styles.heroButtonOutline)}
             to="/docs/intro">
             关于我
           </Link>
