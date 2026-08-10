@@ -5,3 +5,15 @@ sre:
 agent:
   label: Agent
   description: AI Agent 排障与自动化
+
+ubuntu:
+  label: Ubuntu
+  description: Ubuntu 服务器运维与配置
+
+ops:
+  label: 运维
+  description: Linux 运维实践与命令速查
+
+linux:
+  label: Linux
+  description: Linux 系统管理与工具

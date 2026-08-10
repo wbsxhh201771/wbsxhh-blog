@@ -26,6 +26,20 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'Ubuntu 运维',
+      collapsed: true,
+      link: {type: 'doc', id: 'ops/ubuntu/index'},
+      items: [
+        'ops/ubuntu/server-install',
+        'ops/ubuntu/docker-compose-v2',
+        'ops/ubuntu/docker-vscode-permissions',
+        'ops/ubuntu/ssh-key-only',
+        'ops/ubuntu/static-ip-netplan',
+        'ops/ubuntu/system-maintenance',
+      ],
+    },
+    {
+      type: 'category',
       label: '站点部署',
       collapsed: true,
       items: ['deploy/cloudflare-pages'],
