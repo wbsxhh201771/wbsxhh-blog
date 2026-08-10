@@ -4,20 +4,70 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  min-height: 68vh;
+  padding: 8rem 0 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-image: url('/img/wbsxhh-background.png');
+  background-size: cover;
+  background-position: center 40%;
+  color: #fff;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(20, 16, 8, 0.55) 0%,
+    rgba(180, 130, 0, 0.4) 55%,
+    rgba(245, 197, 24, 0.35) 100%
+  );
+  z-index: 0;
+}
+
+.heroBanner :global(.container) {
+  position: relative;
+  z-index: 1;
+}
+
+.heroBanner :global(.hero__title) {
+  color: #fff;
+  font-size: 3rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.heroBanner :global(.hero__subtitle) {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
 }
 
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    min-height: 52vh;
+    padding: 5rem 1.5rem 4rem;
+  }
+
+  .heroBanner :global(.hero__title) {
+    font-size: 2.25rem;
+  }
+
+  .heroBanner :global(.hero__subtitle) {
+    font-size: 1.1rem;
+  }
 }

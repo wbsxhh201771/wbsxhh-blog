@@ -65,7 +65,9 @@ const config = {
         title: 'wbsxhh 的 blog',
         logo: {
           alt: 'wbsxhh logo',
-          src: 'img/logo.svg',
+          src: 'img/logo.jpg',
+          width: 36,
+          height: 36,
         },
         items: [
           {to: '/blog', label: '博客', position: 'left'},

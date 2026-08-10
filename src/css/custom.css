@@ -1,30 +1,92 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * wbsxhh blog theme — golden palette from wbsxhh-background.png
  */
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #4f46e5;
-  --ifm-color-primary-dark: #4338ca;
-  --ifm-color-primary-darker: #3730a3;
-  --ifm-color-primary-darkest: #312e81;
-  --ifm-color-primary-light: #6366f1;
-  --ifm-color-primary-lighter: #818cf8;
-  --ifm-color-primary-lightest: #a5b4fc;
+  --wbsxhh-gold: #f5c518;
+  --wbsxhh-gold-dark: #d4a017;
+  --wbsxhh-gold-darker: #b8860b;
+  --wbsxhh-warm-bg: #fffbf0;
+  --wbsxhh-ink: #1a1408;
+
+  --ifm-color-primary: #d4a017;
+  --ifm-color-primary-dark: #b8860b;
+  --ifm-color-primary-darker: #9a7209;
+  --ifm-color-primary-darkest: #7a5a07;
+  --ifm-color-primary-light: #e8b923;
+  --ifm-color-primary-lighter: #f5c518;
+  --ifm-color-primary-lightest: #fce588;
+
+  --ifm-background-color: var(--wbsxhh-warm-bg);
+  --ifm-navbar-background-color: #fffdf5;
+  --ifm-navbar-link-color: var(--wbsxhh-ink);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary-dark);
+  --ifm-footer-background-color: #2a2210;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(212, 160, 23, 0.12);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #818cf8;
-  --ifm-color-primary-dark: #6366f1;
-  --ifm-color-primary-darker: #4f46e5;
-  --ifm-color-primary-darkest: #4338ca;
-  --ifm-color-primary-light: #a5b4fc;
-  --ifm-color-primary-lighter: #c7d2fe;
-  --ifm-color-primary-lightest: #e0e7ff;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #f5c518;
+  --ifm-color-primary-dark: #e8b923;
+  --ifm-color-primary-darker: #d4a017;
+  --ifm-color-primary-darkest: #b8860b;
+  --ifm-color-primary-light: #fce588;
+  --ifm-color-primary-lighter: #fef3c7;
+  --ifm-color-primary-lightest: #fffbeb;
+
+  --ifm-background-color: #1a1408;
+  --ifm-navbar-background-color: #221c0e;
+  --ifm-navbar-link-color: #ffffff;
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary-lighter);
+  --ifm-footer-background-color: #141008;
+  --docusaurus-highlighted-code-line-bg: rgba(245, 197, 24, 0.15);
+}
+
+.navbar__logo img {
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.navbar__title {
+  font-weight: 600;
+  color: var(--wbsxhh-ink);
+}
+
+[data-theme='dark'] .navbar__title {
+  color: #ffffff;
+}
+
+[data-theme='dark'] .navbar__link,
+[data-theme='dark'] .navbar__link--active {
+  color: #ffffff;
+}
+
+[data-theme='dark'] .navbar__link:hover,
+[data-theme='dark'] .navbar__link--active:hover {
+  color: var(--ifm-color-primary-lighter);
+}
+
+[data-theme='dark'] .navbar-sidebar .menu__link {
+  color: #ffffff;
+}
+
+.button--primary {
+  background-color: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: #1a1408;
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
+  color: #1a1408;
+}
+
+.footer--dark {
+  --ifm-footer-background-color: #2a2210;
+}
+
+[data-theme='dark'] .footer--dark {
+  --ifm-footer-background-color: #141008;
 }
