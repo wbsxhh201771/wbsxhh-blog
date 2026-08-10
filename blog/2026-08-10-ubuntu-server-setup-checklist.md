@@ -19,7 +19,7 @@ date: 2026-08-10
 1. **网络**：配置静态 IP（内网服务器常见需求）
 2. **安全**：禁止密码登录，只允许密钥
 3. **开发环境**：Docker + Compose V2，配合 VSCode Remote 使用
-4. **系统维护**：关防火墙（内网场景）、卸无用软件、虚拟化环境下装 Guest Agent
+4. **系统维护**：卸无用软件、虚拟化环境下装 Guest Agent
 
 下面按这几条主线说明「为什么做」和「踩坑点」。**从零安装系统**见 [Ubuntu Server 安装指南](/docs/ops/ubuntu/server-install)；PVE 导入镜像或装好后，继续看 [Ubuntu 运维手册](/docs/ops/ubuntu)。
 
@@ -63,7 +63,7 @@ Docker 建议走[官方 APT 源](/docs/ops/ubuntu/docker-compose-v2)装 CE 和 C
 
 ## 系统维护：按需处理
 
-内网服务器若不需要主机防火墙，可[永久关闭 ufw](/docs/ops/ubuntu/system-maintenance)。桌面版镜像可[卸载 LibreOffice](/docs/ops/ubuntu/system-maintenance) 省空间；要装 NVIDIA 驱动则先[禁用 nouveau](/docs/ops/ubuntu/system-maintenance)；Proxmox / KVM 虚拟机建议[安装 qemu-guest-agent](/docs/ops/ubuntu/system-maintenance)，便于宿主机获取 IP 和优雅关机。
+桌面版镜像可[卸载 LibreOffice](/docs/ops/ubuntu/system-maintenance) 省空间；要装 NVIDIA 驱动则先[禁用 nouveau](/docs/ops/ubuntu/system-maintenance)；Proxmox / KVM 虚拟机建议[安装 qemu-guest-agent](/docs/ops/ubuntu/system-maintenance)，便于宿主机获取 IP 和优雅关机。
 
 以上命令集中在 [系统维护速查](/docs/ops/ubuntu/system-maintenance) 一页，按需查阅即可。
 
@@ -76,6 +76,6 @@ Docker 建议走[官方 APT 源](/docs/ops/ubuntu/docker-compose-v2)装 CE 和 C
 | Docker + Compose V2 | [安装步骤](/docs/ops/ubuntu/docker-compose-v2) |
 | VSCode Docker 权限 | [用户组方案](/docs/ops/ubuntu/docker-vscode-permissions) |
 | SSH 密钥登录 | [含 cloud-init 排查](/docs/ops/ubuntu/ssh-key-only) |
-| 防火墙 / 软件 / 驱动 / 虚拟化 | [系统维护速查](/docs/ops/ubuntu/system-maintenance) |
+| 软件 / 驱动 / 虚拟化 | [系统维护速查](/docs/ops/ubuntu/system-maintenance) |
 
 博客记「为什么和踩坑」，文档放「可复制命令」——需要动手时直接打开 [Ubuntu 运维手册](/docs/ops/ubuntu) 即可。

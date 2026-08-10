@@ -17,7 +17,7 @@ title: Ubuntu 运维手册
 | [VSCode Docker 插件权限](/docs/ops/ubuntu/docker-vscode-permissions) | 解决 VSCode Remote / Docker 插件无权限访问 Docker |
 | [SSH 仅允许密钥登录](/docs/ops/ubuntu/ssh-key-only) | 禁止密码登录，排查 cloud-init 配置覆盖问题 |
 | [静态 IP 与 Netplan 配置](/docs/ops/ubuntu/static-ip-netplan) | 配置静态 IP，避免重启后被 cloud-init 还原为 DHCP |
-| [系统维护速查](/docs/ops/ubuntu/system-maintenance) | 防火墙、卸载软件、显卡驱动、虚拟化 Agent |
+| [系统维护速查](/docs/ops/ubuntu/system-maintenance) | 卸载软件、显卡驱动、虚拟化 Agent |
 
 ## 阅读建议
 

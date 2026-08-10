@@ -9,22 +9,6 @@ title: 系统维护速查
 
 Ubuntu 服务器初始化与维护中的常用命令，按场景分节。
 
-<h2 id="firewall">永久关闭 ufw 防火墙</h2>
-
-适用于内网环境或已有其他边界防护、不需要主机防火墙的场景。
-
-```bash
-sudo systemctl stop ufw
-sudo systemctl disable ufw
-```
-
-重启后 ufw 不会自动启用。若需重新开启：
-
-```bash
-sudo systemctl enable ufw
-sudo systemctl start ufw
-```
-
 <h2 id="libreoffice">卸载 LibreOffice</h2>
 
 服务器通常不需要桌面办公套件，可卸载以节省空间：
