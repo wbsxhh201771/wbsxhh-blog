@@ -33,7 +33,7 @@ const FeatureList = [
       <>
         开源项目与代码仓库。
         <br />
-        <a href="https://github.com/wbsxhh201771?tab=repositories" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/wbsxhh201771" target="_blank" rel="noopener noreferrer">
           wbsxhh201771 →
         </a>
       </>
