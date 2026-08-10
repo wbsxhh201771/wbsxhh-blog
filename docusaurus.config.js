@@ -5,7 +5,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'wbsxhh 的 blog',
   tagline: '个人技术笔记与项目实践',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.jpg',
 
   future: {
     v4: true,
