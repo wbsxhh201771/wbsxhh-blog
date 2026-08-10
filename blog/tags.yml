@@ -1,0 +1,7 @@
+sre:
+  label: SRE
+  description: Site Reliability Engineering 实践
+
+agent:
+  label: Agent
+  description: AI Agent 排障与自动化
